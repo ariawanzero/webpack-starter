@@ -10,7 +10,14 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.scss$/, use: ExtractTextPlugin.extract(['style-loader','css-loader', 'sass-loader']) }
+            {
+                test: /\.scss$/, 
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader'],
+                    publicPath: '/dist'
+                }) 
+            }
         ]
     },
     plugins: [
@@ -22,6 +29,10 @@ module.exports = {
             hash: true,
             template: './src/index.html'
         }),
-        new ExtractTextPlugin("app.css")
+        new ExtractTextPlugin({
+            filename: "app.css",
+            disable: false,
+            allChunks: true
+        })
     ]
 }
