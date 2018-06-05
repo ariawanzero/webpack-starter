@@ -24,7 +24,8 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 9000,
-        stats: "errors-only"    
+        stats: "errors-only",
+        open: true
     },
     plugins: [
         new HtmlWebpackPlugin({ 
