@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack -p"
+    "prod": "npm run clean && webpack -p",
+    "clean": "rimraf ./dist/*"
   },
   "keywords": [],
   "author": "Ariawan Zero",
@@ -15,6 +16,7 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.10.2",
