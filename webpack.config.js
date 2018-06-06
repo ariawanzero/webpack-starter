@@ -17,6 +17,10 @@ module.exports = {
                     use: ['css-loader', 'sass-loader'],
                     publicPath: '/dist'
                 }) 
+            },
+            {
+                test : /\.pug$/,
+                use: ['raw-loader', 'pug-html-loader']
             }
         ]
     },
@@ -33,8 +37,7 @@ module.exports = {
             //     collapseWhitespace: true
             // },
             hash: true,
-            excludeChunks: ['contact'],
-            template: './src/index.html'
+            template: './src/index.pug'
         }),
         new ExtractTextPlugin({
             filename: "app.css",
