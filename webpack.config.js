@@ -33,7 +33,6 @@ module.exports = {
             //     collapseWhitespace: true
             // },
             hash: true,
-            excludeChunks: ['contact'],
             template: './src/index.html'
         }),
         new ExtractTextPlugin({
