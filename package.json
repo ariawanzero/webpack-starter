@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "npm run clean && webpack -p",
+    "prod": "SET NODE_ENV=production& npm run clean && webpack -p",
     "clean": "rimraf ./dist/*"
   },
   "keywords": [],
