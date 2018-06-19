@@ -23,6 +23,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: cssConfig
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    'file-loader?name=images/[name].[ext]',
+                    //'file-loader?name=[name].[ext]&outputPath=images/&publicPath=images/',
+                    'image-webpack-loader'
+                ]
             }
         ]
     },
@@ -30,15 +38,11 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         hot: true,
-        stats: "errors-only",
         open: true
     },
     plugins: [
         new HtmlWebpackPlugin({ 
             title: 'Starter Webpack',
-            minify: {
-                collapseWhitespace: true
-            },
             hash: true,
             template: './src/index.html'
         }),
